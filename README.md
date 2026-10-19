@@ -1,63 +1,118 @@
-[![CodeQL](https://github.com/aaryanrr/RailwayMGMT/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aaryanrr/RailwayMGMT/actions/workflows/codeql-analysis.yml)
-![](https://img.shields.io/github/license/aaryanrr/RailwayMGMT?color=red)
+# Railway Management System
 
-RAILWAY MANAGEMENT SYSTEM
+A command-line Railway Management System built using **Python and MySQL**. The application allows users to view available trains, check fares, book tickets, cancel reservations, and view their bookings.
 
----------
-:FOLDERS:
-_________
+## Project Structure
 
-/Assets : Contains the data that is to be inserted in the MySQL tables in csv format
-         
-         Files: Train_details.csv -> Contains all the data about the trains in the format 
-                                     (Train No, Station Code, Station Name, Arrival time, Departure Time, 
-                                     Distance, Source Station, Source Station Name, Destination Station, 
-                                     Destination Station Name)
+```text
+Railway-Management-System/
+├── Assets/
+│   └── Train_details.csv
+├── core/
+│   ├── __init__.py
+│   ├── Checks.py
+│   ├── InsertData.py
+│   ├── Other.py
+│   └── User_Functions.py
+├── Main.py
+├── README.md
+├── requirements.txt
+├── LICENSE
+└── .gitignore
+```
 
-/core : Contains all the files that are required by the project to work
+### Folder and File Description
 
-        Files: __init__.py -> Makes the folder to be recognized as a module
-               Checks.py -> This file contains the functions that verify the requirements of the Project
-               InsertData.py -> This file contains the functions to insert the data in the MySQL tables
-               User_Functions.py -> This file contains the function that allow a user to perform certain task
-               Other.py -> This file contains some commonly used functions
+- **Assets/** — Contains train and station information in CSV format.
+- **core/Checks.py** — Contains project requirement checks.
+- **core/InsertData.py** — Handles inserting train data into MySQL.
+- **core/User_Functions.py** — Contains functions for railway reservation operations.
+- **core/Other.py** — Contains common utility functions.
+- **Main.py** — Entry point of the application.
+- **requirements.txt** — Lists the required Python packages.
 
--------------------
-:ROOT FOLDER FILES:
-___________________
+## Features
 
-Main.py -> This is the main file that connects all the other modules and is used to run the project
+1. **Book a Ticket** — Book a railway ticket.
+2. **Cancel a Booking** — Cancel an existing reservation.
+3. **Check Fares** — View ticket fares.
+4. **View My Bookings** — Display booking information.
+5. **Show Available Trains** — View train availability information.
+6. **Menu Navigation** — Navigate the application's options.
+7. **Clear Screen** — Clear the terminal screen.
+8. **About** — Display project information.
+9. **Exit** — Close the application.
 
-requirements.txt -> It contains the required packages for this project to work that can be installed via the command
-                    `pip3 install -r requirements.txt`
+## Technologies Used
 
+- Python
+- MySQL
+- SQL
+- CSV
 
-----------
-:FEATURES:
-__________
+## Installation and Setup
 
-Overview: It is a Railway Management system in which a user can book tickets, cancel reservations,
-          check fares etc. It uses MySQL as the backend database.
+### Prerequisites
 
-1. Book a Ticket: Users can book a ticket
-2. Cancel a Booking: Users can cancel a booked ticket
-3. Check Fares: Users can check fares before booking
-4. Show my Bookings: User can check their bookings
-5. Show Available Trains: Users can see the available trains 
-6. Clear Screen: Clears the terminal screen
-7. Menu: Shows the menu
-8. About: Prints the content of this file to the screen
-9. Exit: Exit the program
+- Python installed on your system
+- MySQL Server
+- Git (optional, for cloning the repository)
 
--------------------
-:ENVIRONMENT SETUP:
-___________________
+### 1. Clone the Repository
 
-1. Clone the Repository to your machine.
-2. Create a Virtual Environment using virtualenv or pipenv.
-3. `pip3 install -r Requirements.txt` to install the required packages automatically.
-4. Make sure the MySQL Service is running and change the YOUR_PASSWORD in the files with the password and the YOUR_USERNAME with the username of your local SQL server.
-5. `python3 Main.py` to see if the program is running correctly and is able to connect to MySQL Server. (Feel free to ask for help if you face any error)
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd YOUR_REPOSITORY_FOLDER
+```
 
-### NOTE: Step 2 is optional but highly recommended to avoid conflicting packages.
-### NOTE: After Cloning the Repo rename the README.md to README.txt in order for the About() Function in /core/Other.py to work.
+Replace the placeholders with your repository URL and folder name.
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure MySQL
+
+- Start your MySQL server.
+- Open the project files and locate the database connection settings.
+- Configure your local MySQL username, password, and database details as required.
+- Never upload passwords or other private credentials to GitHub.
+
+### 5. Run the Application
+
+```bash
+python Main.py
+```
+
+Follow the menu displayed in the terminal to use the available features.
+
+## Notes
+
+- Ensure that MySQL is running before starting the application.
+- Verify the database configuration before running the program.
+- If the About feature reads from a text file, check `core/Other.py` for the expected filename and update it if necessary.
+
+## License
+
+This project includes the MIT License. Refer to the `LICENSE` file for the original license terms and copyright notice.
+
+## Future Improvements
+
+- Add booking search by booking ID.
+- Improve input validation and error handling.
+- Add SQL-based booking and route analysis.
+- Improve database constraints and reservation reliability.
