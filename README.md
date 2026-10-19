@@ -106,10 +106,6 @@ Follow the menu displayed in the terminal to use the available features.
 - Verify the database configuration before running the program.
 - If the About feature reads from a text file, check `core/Other.py` for the expected filename and update it if necessary.
 
-## License
-
-This project includes the MIT License. Refer to the `LICENSE` file for the original license terms and copyright notice.
-
 ## Future Improvements
 
 - Add booking search by booking ID.
